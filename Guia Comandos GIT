@@ -1,0 +1,89 @@
+1. Inicializar un Repositorio Local
+	git init
+
+2. Verificar el Estado del Repositorio
+	git status
+Muestra el estado de los archivos en el repositorio, incluyendo archivos modificados, añadidos o eliminados.
+
+3. Añadir Archivos al Área de Staging
+
+Añadir Todos los Archivos
+	git add .
+Añade todos los archivos modificados, añadidos o eliminados al área de staging.
+
+Añadir Archivos Específicos
+	git add nombre_del_archivo
+Añade un archivo específico al área de staging.
+
+4. Realizar un Commit
+
+	git commit -m "Mensaje de commit"
+Realiza un commit de los cambios en el área de staging, guardándolos en el repositorio local.
+
+5. Configurar el Repositorio Remoto
+
+Añadir un Repositorio Remoto
+	git remote add origin https://github.com/tu_usuario/tu_repositorio.git
+Asocia el repositorio local con un repositorio remoto en GitHub.
+
+Verificar la URL del Repositorio Remoto
+	git remote -v
+Muestra la URL del repositorio remoto configurado.
+
+Cambiar la URL del Repositorio Remoto
+	git remote set-url origin https://github.com/tu_usuario/tu_repositorio.git
+Cambia la URL del repositorio remoto configurado.
+
+6. Enviar Cambios al Repositorio Remoto (Push)
+	git push -u origin main
+Envía los commits locales a la rama main del repositorio remoto.
+
+Enviar Cambios a Otra Rama
+	git push -u origin nombre_de_la_rama
+Envía los commits locales a una rama específica del repositorio remoto.
+
+7. Crear una Nueva Rama
+	git checkout -b nombre_de_la_rama
+Crea una nueva rama y cambia a ella.
+
+8. Autenticación y Gestión de Credenciales
+	Eliminar Credenciales Almacenadas en Windows
+	Abrir el Administrador de Credenciales:
+	Windows + R, luego control keymgr.dll
+	Buscar y eliminar las credenciales relacionadas con github.com.
+	Configurar Nombre y Correo de Usuario
+		git config --global user.name "tu_nombre"
+		git config --global user.email "tu_email@ejemplo.com"
+Configura el nombre y correo electrónico que Git usará para los commits.
+
+9. Clonar un Repositorio
+	git clone https://github.com/tu_usuario/tu_repositorio.git
+Copia un repositorio remoto en tu máquina local.
+
+10. Autenticación con SSH
+Generar una Clave SSH
+	ssh-keygen -t ed25519 -C "tu_correo_electronico@ejemplo.com"
+Genera una nueva clave SSH.
+
+Añadir la Clave SSH al Agente SSH
+	eval "$(ssh-agent -s)"
+	ssh-add ~/.ssh/id_ed25519
+Añade la clave SSH generada al agente SSH.
+
+Cambiar la URL Remota a SSH
+	git remote set-url origin git@github.com:tu_usuario/tu_repositorio.git
+Cambia la URL del repositorio remoto para usar SSH en lugar de HTTPS.
+
+11. Sincronizar Cambios (Pull y Push)
+
+Sincronizar Cambios desde el Control de Código Fuente en VS Code
+Usar la opción "Sync Changes" o "Push" en la vista de Source Control.
+Esto hará un pull de los cambios remotos y luego un push de los cambios locales.
+
+12. Probar la Conexión SSH
+	ssh -T git@github.com
+Prueba la conexión SSH a GitHub.
+
+13. Eliminar la URL Remota
+	git remote remove origin
+Elimina la URL remota configurada en el repositorio local.
